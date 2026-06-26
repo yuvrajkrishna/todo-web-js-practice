@@ -24,11 +24,10 @@ function addTask(){
 push.addEventListener("click",addTask)
 
 input.addEventListener("click",function(e){
-    if(e.key === "Enter"){
+    if(e.key =="Enter"){
         addTask()
     }
 })
-
 
 alltasks.addEventListener("click",function(e){
     if(e.target.closest(".delete")){
