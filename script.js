@@ -23,8 +23,8 @@ function addTask(){
 
 push.addEventListener("click",addTask)
 
-input.addEventListener("click",function(e){
-    if(e.key =="Enter"){
+input.addEventListener("keydown",function(e){
+    if(e.key === "Enter"){
         addTask()
     }
 })
@@ -36,6 +36,8 @@ alltasks.addEventListener("click",function(e){
     }
     const task = e.target.closest(".task")
     if(task){
-        task.classList.toggle("completed")
+        const taskName = task.querySelector(".taskname")
+        taskName.classList.toggle("completed")
+        
     }
 })
