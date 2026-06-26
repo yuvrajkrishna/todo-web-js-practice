@@ -23,3 +23,20 @@ function addTask(){
 
 push.addEventListener("click",addTask)
 
+input.addEventListener("click",function(e){
+    if(e.key === "Enter"){
+        addTask()
+    }
+})
+
+
+alltasks.addEventListener("click",function(e){
+    if(e.target.closest(".delete")){
+        e.target.closest(".task").remove()
+        return;
+    }
+    const task = e.target.closest(".task")
+    if(task){
+        task.classList.toggle("completed")
+    }
+})
